@@ -11,3 +11,6 @@ run:
 
 push:
 	docker push ${REPOSITORY}/${PROJECT}:${BRANCH}
+
+run-privilege:
+	docker run -i --rm --pid=host --user nobody -p ${PORT}:${PORT} ${REPOSITORY}/${PROJECT}:$(BRANCH) top
